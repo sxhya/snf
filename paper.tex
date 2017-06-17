@@ -227,12 +227,12 @@ It is clear that $L(p_{\widetilde{A}})$ and $J({\widetilde{A}})$ coincide with $
 \begin{proof} 
 Recall that the classical algorithm for finding Smith normal form of a matrix involves
  operation of addition of one of the two fixed columns (say, $i$-th and $j$-th ones) to another
- so that, unless it was zero from the start, the minimum of $|c_{ki}|$ and $|c_{kj}|$ decreases strictly 
- (here $k$ is some row number and $i$, $j$ are some column numbers selected by the algorithm on one if its steps).
+ so that, unless it was zero from the start, the minimum of $|c_{ki}|$ and $|c_{kj}|$ decreases strictly. 
+ Here $k$ is some row number and $i$, $j$ are some column numbers selected by the algorithm on one if its steps.
 
-To adapt the classical algorithm to our situation of matrices with parities it suffices to describe
- how the modified algorithm performs this operation in the case when the selected columns have different parities.
-Indeed, our set of elementary operations differs from the usual one only in that
+To adapt this algorithm to our situation it suffices to describe
+ how the above operation is performed in the case when $i$-th and $j$-th columns have different parities.
+Indeed, the only difference of our elementary operations from the usual ones is that
  we do not allow adding odd multiples of odd columns to even columns.
 
 Suppose that $i$-th column of $c$ is odd and $j$-th one is even.
@@ -252,9 +252,9 @@ In the first case after adding $q' \cdot c_{*i}$ to $c_{*j}$ we obtain the requi
 In the second case we need to further subtract $c_{*j}$ from $c_{*i}$ to get $c_{ki} = 0$.
 \end{proof}
 
-After the canonical form $(d, p_d)$ of $(\widetilde{A}, p_{\widetilde{A}})$ is found, it becomes trivial to calculate the group $\K(A, F)$.
-Each zero diagonal coefficient $r_i$ appearing in $d$ produces one summand in $\K(A, F)$ which, depending on $p_d(i)$, is isomorphic to $\K(F)$ or $\Kmw(F)$, whereas
- each nonzero coefficient $r_i \neq 0$ gives one summand $\K(F)/(r_i \K(F))$ or $\Kmw(F) / ((r_i/2) I)$.
+Once the canonical form $(d, p_d)$ of $(\widetilde{A}, p_{\widetilde{A}})$ is found, it becomes trivial to calculate the group $\K(A, F)$.
+Each invariant factor $r_i$ appearing in $d$ produces one summand in $\K(A, F)$ which, depending on $p_d(i)$, 
+ is isomorphic to $\K(F)/(r_i \K(F))$ or $\Kmw(F) / ((r_i/2) I)$.
 
 Now suppose that columns of $A$ (and hence of $\widetilde{A}$) are ordered in such a way that
  each of the first $k$ columns contains and odd entry, and the remaining $n-k$ columns consist of even entries.
@@ -267,9 +267,10 @@ Looking at the effect of operations \eqref{item:type2}--\eqref{item:type5} modul
  \item $i$-th column of $d$ is odd if and only if one of the coefficients $q'_{ji}$ of the inverse matrix $q^{-1}$ is odd for some $1\leq j\leq k$.
 \end{itemize}
 
-In \cite{MW} M.~Westaway even conjectured that the above two properties could be used to read off from $q$ the parities of columns of $d$, and, thus, the type of summands appearing in $\K(A, F)$
- (Westaway's matrices $\nu$, $\mu$ appearing in the statement of \cite[Conjecture~9.1]{MW} correpond to our $q$ via $\nu = q^T$, $\mu = {q^{-1}}^T$).
-While this characterization clearly works for the matrix $q$ obtained via the algorithm of~\cref{lm:normal-form},
+In \cite{MW} M.~Westaway even conjectured that the above two properties could be used to read off the parities of columns of $d$ from $q$ and,
+ thus, the type of summands appearing in $\K(A, F)$
+ (Westaway's matrices $\nu$, $\mu$ appearing in the statement of \cite[Conjecture~9.1]{MW} correspond to our $q$ via $\nu = q^T$, $\mu = {q^{-1}}^T$).
+Although, as said before, this characterization works for the matrix $q$ obtained via the algorithm of~\cref{lm:normal-form},
  it may not work for $q$ obtained via the classical algorithm for finding SNF, which ignores columns' parities.
 Thus, as stated, \cite[Conjecture~9.1]{MW} is false.
 \begin{comment}
