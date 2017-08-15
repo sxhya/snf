@@ -3,7 +3,6 @@
 \usepackage[breaklinks=true]{hyperref}
 \usepackage[capitalize]{cleveref}
 \usepackage[hyperref=true, backend=bibtex, firstinits=true, citestyle=numeric-comp, sortlocale=en_US, url=false, doi=false, eprint=true, maxbibnames=4]{biblatex}            
-%\usepackage[notref,notcite]{showkeys}
 \usepackage[matrix,arrow,curve]{xy}
 \usepackage[toc,page]{appendix}
 
@@ -15,17 +14,13 @@
 \renewcommand*{\bibfont}{\footnotesize}
 \renewcommand\thesubsection{\arabic{subsection}}
 
-%\newlist{lemlist}{enumerate}{1} \setlist[lemlist]{label={\rm(\arabic{lemlisti})}, ref=\thelemma.(\arabic{lemlisti}),noitemsep} \Crefname{lemlisti}{Lemma}{Lemmas}
-
 \theoremstyle{plain}
 
 \newtheorem{thm}{Theorem}
 \newtheorem{prop}{Proposition}
 \Crefname{thm}{Theorem}{Theorems}
-%\numberwithin{equation}{section}
 
 \newtheorem{lemma}{Lemma}
-%\numberwithin{lemma}{section}
 \Crefname{lemma}{Lemma}{Lemmas}
 
 \newtheorem{cor}[lemma]{Corollary}
@@ -46,8 +41,7 @@
 \newtheorem{df}[lemma]{Definition} \Crefname{df}{Definition}{Definitions}
 \newtheorem{example}{Example} \Crefname{example}{Example}{Examples} 
  
-\newcommand\SmallMatrix[1]{{%
-  \tiny\arraycolsep=0.3\arraycolsep\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}}
+\newcommand\SmallMatrix[1]{{\tiny\arraycolsep=0.3\arraycolsep\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}}
 \DeclareMathOperator{\St}{St}
 \DeclareMathOperator{\SL}{SL}
 \newcommand{\ZZ}{\mathbb{Z}}
@@ -70,7 +64,6 @@
 
 
 \maketitle
-%\section{Introduction}
 The aim of this note is to compute the unstable $\K$-group $\K(A, F)$ for arbitrary generalized Cartan matrix $A$ and $F$ a field,
  and thus give a complete answer to the question raised in~\cite{MW}.
 Recall from~\cite{MR}, \cite{Ti} that, by definition, the group $\K(A, F)$ is the kernel of the map 
@@ -86,7 +79,6 @@ Westaway's proof involved case-by-case analysis and, moreover,
 In this note we describe a solution of the general problem, namely we describe a method to compute $\K(A, F)$ from the given GCM $A$.
 We also reprove some of the results of~\cite{MW} in a simplified form.
 Our method is, essentially, a variant of the well-known algorithm for computing Smith normal form of a matrix.
-%We also show~\cite[Conjecture 9.1]{MW} to be false as stated, and propose a way to corrected its statement.
 
 \subsection{Preliminaries}
 Throughout this note $F$ denotes an arbitrary field and $A=(a_{ij})$ a generalized Cartan matrix of size $n$.
@@ -137,7 +129,6 @@ Of course, the integers $r_i$ can be concretely obtained as
 Notice that the integer $s$ from the statement of~\cref{thm-odd} is precisely the number of nonzero $r_i$'s.
   
 In the case when all entries of $A$ are even, invariant factors $r_i$ are even as well and the group $\K(A, F)$ can be computed just as easily.
-%Compare the following result with~\cite[Theorem~6.1]{MW}, which is its special case.
 \begin{thm} \label{thm-even}
   Assume that all entries of $A$ are even.
   Assume, moreover, that $G_A \cong \ZZ / r_1 \ZZ \oplus \ldots \oplus \ZZ / r_s\ZZ \oplus \ZZ^{m-s}$ for some $r_i$ satisfying $r_i | r_{i+1}$.
@@ -168,7 +159,6 @@ By definition, it is simply a pair $(b, p_b)$ consisting of an integer $m\times 
  such that entries $b_{ij}$ are even for all $i$ given $p_b(j)=even$.
 We call function $p_b$ a {\it parity function}.
 We also call the corresponding column $b_{*i}$ {\it odd} or {\it even} depending on the value of $p_b(i)$.
-%With this notation a matrix with parity is simply a matrix whose even columns consist of even entries.
 Notice that we make no assumptions about entries of odd columns.
 
 We now list five types of elementary operations that can be applied to a $m \times n$ matrix with parity $(b, p_b)$.
@@ -205,7 +195,6 @@ It is clear that $L(p_{\widetilde{A}})$ and $J({\widetilde{A}})$ coincide with $
 \begin{lemma} \label{lm:inv} The isomorphism class of the quotient $L(p_c)/J(c)$ is not changed
  by any of the above five elementary transformations of $(c, p_c)$. \end{lemma}
 \begin{proof}
- %Assertion of the lemma is not immediately obvious only for operations of type \eqref{item:type4} and \eqref{item:type5}. 
  Let us verify the assertion of the lemma, for example, for the operation of type~\eqref{item:type5}
   (for other operations it is similar but easier).
  Assume that $c'$ is the matrix obtained from $c$ by applying some operation of type~\eqref{item:type5}.
@@ -238,9 +227,6 @@ Indeed, the only difference between our elementary operations and the usual ones
  we do not allow adding odd multiples of odd columns to even columns.
 
 Suppose that $i$-th column of $c$ is odd and $j$-th one is even.
-
-%In the case $|c_{ki}| \geq |c_{kj}|$, write $c_{ki} + q c_{kj} = r$ for some $q$ and $r$, satisfying $|r| < |c_{kj}|$.
-%Using an operation of type~\eqref{item:type4} we add $q \cdot c_{*j}$ to $c_{*i}$ so that $\min(|c_{ki}|, |c_{kj}|)$ decreases strictly.
 
 We only need to consider the case $|c_{ki}| < |c_{kj}|$. Write $c_{kj} + q c_{ki} = r$ for some $q$ and $r$, satisfying $|r| < |c_{ki}|$.
 If $q$ is even, add $q \cdot c_{*i}$ to $c_{*j}$ using an operation of type~\eqref{item:type5} and 
