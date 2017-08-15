@@ -260,6 +260,11 @@ If $(\widetilde{A}, p_{\widetilde{A}})$ is reduced to the canonical form $(d, p_
  each invariant factor $r_i$ produces one summand in $\K(A, F)$ which, depending on $p_d(i)$, 
  is isomorphic to $\K(F)/r_i \K(F)$ or $\Kmw(F) / (r_i/2) I$.
 \end{thm}
+
+We illustrate the above theorem with Example \textnumero~156 from~\cite[p.~19]{MW}.
+\begin{example}
+ Blah-blah-blah
+\end{example}
   
 Now suppose that columns of $A$ (and hence of $\widetilde{A}$) are ordered in such a way that
  each of the first $k$ columns contains and odd entry, and the remaining $n-k$ columns consist of even entries.
@@ -274,7 +279,7 @@ Looking at the effect of operations \eqref{item:type2}--\eqref{item:type5} modul
 
 In \cite{MW} M.~Westaway even conjectured that the above two properties could be used to determine $p_d$ from the given $q$ and,
  thus, determine the type of summands appearing in $\K(A, F)$
- (Westaway's matrices $\nu$, $\mu$ appearing in the statement of \cite[Conjecture~9.1]{MW} correspond to our $q$ via $\nu = q^T$, $\mu = {q^{-1}}^T$).
+ (Westaway's matrices $\nu$, $\mu$ appearing in the statement of \cite[Conjecture~9.1]{MW} correspond to our $q$ via $\nu = q^T$, $\mu = (q^{-1})^T$).
 Although, as said before, this characterization works for the matrix $q$ obtained via the algorithm of~\cref{lm:normal-form},
  it may not work for $q$ obtained via the classical algorithm for finding SNF, which ignores columns' parities.
 Thus, as stated, \cite[Conjecture~9.1]{MW} is false.
@@ -286,7 +291,7 @@ To produce a concrete counterexample, start with GCM
 -1& 2& -2& 0\\
 -2& -2& 2& -4\\
 0& 0& -4& 2\end{smallmatrix}\right)$
-  and write SNF decomposition of~\cref{lm:normal-form} for $\widetilde{A}$
+  and write down SNF decomposition of~\cref{lm:normal-form} for $\widetilde{A}$
 \[\widetilde{A} = \left(\begin{smallmatrix}
 -1& 3& 0& 0\\
 -2& 0& 2& 0\\
@@ -305,10 +310,13 @@ To produce a concrete counterexample, start with GCM
 0& -3& 1& 0\\
 0& -3& 0& 1\\
 0& 1& 0& 0\\ \end{smallmatrix}\right) = p \cdot d \cdot q.\]
-Looking at the last 2 columns of $q$ we deduce that $1$st and $4$th columns of $d$ are odd while $2$nd and $3$rd ones are even.
-Now take $s = t_{43}(1) \in \SL(4, \ZZ)$, $t = t_{43}(-1) \in \SL(6, \ZZ)$.
-Notice that the central factor in the decomposition $\widetilde{A} = (p t) \cdot (t^{-1} d s^{-1}) \cdot (s q)$ is still 
- a diagonal matrix but neither of the above two criterions is applicable to the matrix $sq$.
+Looking at the last 2 columns of $q$ we deduce that $1$st and $4$th columns of $d$ are odd while $2$nd and $3$rd ones are even,
+ hence $\K(A, F) \cong \Kmw/I \oplus \Kmw/2I \oplus \K(F)/4\K(F)$.
+
+Now take $s = t_{43}(1) \in \SL(4, \ZZ)$, $t = t_{43}(-1) \in \SL(6, \ZZ)$ and consider the decomposition 
+$\widetilde{A} = (p t) \cdot (t^{-1} d s^{-1}) \cdot (s q)$ which is still a valid Smith normal form decomposition.
+Notice that the central factor is still the diagonal matrix $\mathrm{diag}(-1,2,4,4)$ but neither of the above 
+ two criterions is able to correctly identify the type of summands appearing in $\K(A, F)$.
 \end{example}
 
 \printbibliography
