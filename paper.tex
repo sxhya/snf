@@ -248,7 +248,7 @@ If $(\widetilde{A}, p_{\widetilde{A}})$ is reduced to Smith canonical form $(d, 
 \end{thm}
 
 Notice that the total numbers of odd and even columns of $d$ are the same as the corresponding numbers for $A$ and $\widetilde{A}$.
-In the simplest cases this allows one to immediately compute $\K(A, F)$ by only knowing SNF of $\widetilde{A}$.
+In many cases this allows one to immediately compute $\K(A, F)$ only knowing SNF of $\widetilde{A}$.
 \begin{example}
 Consider hyperbolic GCM \textnumero~156 from~\cite[p.~19]{MW}.
  Set $A = \left(\begin{smallmatrix}
@@ -259,7 +259,7 @@ Consider hyperbolic GCM \textnumero~156 from~\cite[p.~19]{MW}.
 Clearly, $A$ has three even columns and one odd column. 
 The Smith normal form of $\widetilde{A}$ is $d=\mathrm{diag}(1,2,2,0)$.
 Notice that a diagonal coefficient of $d$ can be odd only if the corresponding column is odd.
-Thus, we get that $p_d(1)=odd$, $p_d(i)=even$ for $i>1$, hence we compute $\K(A, F)$ as $\Kmw(F)/I \oplus \Kmw(F)/I \oplus \Kmw(F)$,
+Thus, we get that $p_d(1)=odd$, $p_d(i)=even$ for $i>1$, and we compute $\K(A, F)$ as $\Kmw(F)/I \oplus \Kmw(F)/I \oplus \Kmw(F)$,
  which agrees with~\cite{MW}.
 \end{example}
   
@@ -301,11 +301,12 @@ To produce a counterexample, start with GCM
 -2& 0& 1\\
  1& 0& 0 \end{smallmatrix}\right) = p \cdot d \cdot q.\]
 Looking at the last column of $q$ we get that $1$st and $3$rd columns of $d$ are odd while $2$nd one is even,
- hence $\K(A, F) \cong \Kmw/I \oplus \K(F)/2\K(F)$.
+ hence $\K(A, F) \cong \Kmw(F)/I \oplus \K(F)/2\K(F)$.
 
 Now set $s:= t_{32}(1)$, $t:= t_{32}(-1) \in \SL(3, \ZZ)$ and consider the decomposition 
 $\widetilde{A} = (p t) \cdot (t^{-1} d s^{-1}) \cdot (s q)$ which is still a valid SNF decomposition.
-Now application of Westaway's criterion to the matrix $sq$ incorrectly determines the parity of the third column of $t^{-1}ds^{-1}=d$ to be even rather than odd.
+Now the application of Westaway's criterion to the matrix $sq$ incorrectly gives that the parity of the third column of $t^{-1}ds^{-1}=d$ is even rather than odd
+ and, thus, gives another $\Kmw(F)/I$ summand instead of $\K(F)/2\K(F)$.
 \end{example}
 
 \printbibliography
