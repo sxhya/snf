@@ -274,11 +274,11 @@ Looking at the effect of operations \eqref{item:type2}--\eqref{item:type5} modul
  \item $i$-th column of $d$ is odd if and only if one of the coefficients $q'_{ji}$ of the inverse matrix $q^{-1}$ is odd for some $1\leq j\leq k$.
 \end{itemize}
 
-In \cite{MW} M.~Westaway even conjectured that the above two properties could be used to determine $p_d$ from the given $q$ and,
- thus, determine the type of summands appearing in $\K(A, F)$
+In \cite{MW} M.~Westaway even conjectured that the above two properties are simultaneously fulfilled iff $p_d(i)=odd$, and thus, that
+ it is possible to determine the type of summands appearing in $\K(A, F)$ from the given matrix $q$
  (Westaway's matrices $\nu$, $\mu$ appearing in the statement of \cite[Conjecture~9.1]{MW} correspond to our $q$ via $\nu = q^T$, $\mu = (q^{-1})^T$).
 Although, as said before, this characterization works for the matrix $q$ obtained via the algorithm of~\cref{lm:normal-form},
- it may not work for $q$ occurring in {\it arbitrary} SNF decomposition of $\widetilde{A}$
+ it may not work for {\it arbitrary} $q$ occurring in SNF decomposition of $\widetilde{A}$
  (e.\,g. the one obtained via the classical algorithm for finding SNF, which ignores columns' parities).
 Thus, as stated, \cite[Conjecture~9.1]{MW} is false.
 
@@ -305,8 +305,8 @@ Looking at the last column of $q$ we get that $1$st and $3$rd columns of $d$ are
 
 Now set $s:= t_{32}(1)$, $t:= t_{32}(-1) \in \SL(3, \ZZ)$ and consider the decomposition 
 $\widetilde{A} = (p t) \cdot (t^{-1} d s^{-1}) \cdot (s q)$ which is still a valid SNF decomposition.
-It remains to notice that both criterions mentioned above are unable to correctly determine the 
- type of summands appearing in $\K(A, F)$ from the matrix $sq$.
+Now application of Westaway's criterion to the matrix $sq$ gives incorrect answer.
+More precisely, it incorrectly determines the parity of the third column of $d$ to be even rather than odd.
 \end{example}
 
 \printbibliography
