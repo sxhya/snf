@@ -152,7 +152,7 @@ Now we turn to the case when $A$ contains columns of both types
 (i.\,e. there are columns having an odd entry, and consisting only of even entries).
 The basic idea remains the same: we need to find a nice basis for the subgroup $J\leq L$ of defining relations of $\K(A, F)$.
 This time, however, the situation is more tricky since we cannot simply tensor out $\K(F)$ or $\Kmw(F)$.
-To solve the problem we need to invent some analogue of the fundamental theorem of finitely-generated abelian groups suitable to our sitation.
+To solve the problem we need to invent some analogue of the fundamental theorem of finitely-generated abelian groups suitable to our situation.
 
 We need to introduce the notion of a {\it matrix with parity}.
 By definition, it is simply a pair $(b, p_b)$ consisting of an integer $m\times n$ matrix $b$ and a column function $p_b\colon \{1,\ldots,n\}\to \{odd, even\}$,
@@ -227,7 +227,6 @@ Indeed, the only difference between our elementary operations and the usual ones
  we do not allow adding odd multiples of odd columns to even columns.
 
 Suppose that $i$-th column of $c$ is odd and $j$-th one is even.
-
 We only need to consider the case $|c_{ki}| < |c_{kj}|$. Write $c_{kj} + q c_{ki} = r$ for some $q$ and $r$, satisfying $|r| < |c_{ki}|$.
 If $q$ is even, add $q \cdot c_{*i}$ to $c_{*j}$ using an operation of type~\eqref{item:type5} and 
  notice that $\mathrm{min}(|c_{ki}|,|r|) < \mathrm{min}(|c_{ki}|,|c_{kj}|)$.
@@ -270,11 +269,11 @@ The algorithm given in~\cref{lm:normal-form} delivers SNF decomposition
 
 Looking at the effect of operations \eqref{item:type2}--\eqref{item:type5} modulo $2$ one can notice the following two properties of the matrix $q$:
 \begin{itemize}
- \item $i$-th column of $d$ is odd if and only if coefficients $q_{ij}$ are even for $k+1\leq j \leq n$;
- \item $i$-th column of $d$ is odd if and only if one of the coefficients $q'_{ji}$ of the inverse matrix $q^{-1}$ is odd for some $1\leq j\leq k$.
+ \item $i$-th column of $d$ is odd iff coefficients $q_{ij}$ are even for $k+1\leq j \leq n$;
+ \item $i$-th column of $d$ is odd iff one of the coefficients $q'_{ji}$ of the inverse matrix $q^{-1}$ is odd for some $1\leq j\leq k$.
 \end{itemize}
 
-In \cite{MW} M.~Westaway even conjectured that the above two properties are simultaneously fulfilled iff $p_d(i)=odd$, and thus, that
+In \cite{MW} M.~Westaway even conjectured that $i$-th column of $d$ is odd iff the above two properties of $q$ are simultaneously fulfilled, and thus, that
  it is possible to determine the type of summands appearing in $\K(A, F)$ from the given matrix $q$
  (Westaway's matrices $\nu$, $\mu$ appearing in the statement of \cite[Conjecture~9.1]{MW} correspond to our $q$ via $\nu = q^T$, $\mu = (q^{-1})^T$).
 Although, as said before, this characterization works for the matrix $q$ obtained via the algorithm of~\cref{lm:normal-form},
@@ -300,7 +299,7 @@ To produce a counterexample, start with GCM
 -3& 1& 0\\
 -2& 0& 1\\
  1& 0& 0 \end{smallmatrix}\right) = p \cdot d \cdot q.\]
-Looking at the last column of $q$ we get that $1$st and $3$rd columns of $d$ are odd while $2$nd one is even,
+Looking at the last column of $q$ we conclude that $1$st and $3$rd columns of $d$ are odd while $2$nd one is even,
  hence $\K(A, F) \cong \Kmw(F)/I \oplus \K(F)/2\K(F)$.
 
 Now set $s:= t_{32}(1)$, $t:= t_{32}(-1) \in \SL(3, \ZZ)$ and consider the decomposition 
